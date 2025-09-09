@@ -1,8 +1,13 @@
+---
 - project:
     merge-mode: squash-merge
     default-branch: main
     templates:
       - helpcenter-base-jobs
+    vars:
+      sphinx_pdf_files:
+        - ucs-umn.pdf
+        - ucs-api-ref.pdf
     check:
       jobs:
         - noop
