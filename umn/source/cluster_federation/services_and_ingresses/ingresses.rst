@@ -17,7 +17,7 @@ Creating an Ingress
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. In the navigation pane, choose **Services and Ingresses**. Then, click the **Ingresses** tab.
 
@@ -40,7 +40,7 @@ Creating an Ingress
 
    -  **Forwarding Policy**: When the access address of a request matches the forwarding policy (a forwarding policy consists of a domain name and URL, for example, 10.117.117.117:80/helloworld), the request is forwarded to the corresponding target Service for processing. You can add multiple forwarding policies.
 
-      -  **Domain Name**: (Optional) actual domain name. Ensure that the domain name has been registered and licensed. Once a forwarding policy is configured with a domain name specified, you must use the domain name for access.
+      -  **Domain Name**: (optional) actual domain name. Ensure that the domain name has been registered and licensed. Once a forwarding policy is configured with a domain name specified, you must use the domain name for access.
       -  **URL**: access path to be registered, for example, **/healthz**. The access path must be the same as the URL exposed by the backend application. Otherwise, a 404 error will be returned.
       -  **Backend Service**: Select a Service name. You need to create the NodePort Service first. For details, see :ref:`NodePort <ucs_01_0272>`.
       -  **Backend Service Port**: After you select the backend Service, the corresponding container port is automatically filled in.

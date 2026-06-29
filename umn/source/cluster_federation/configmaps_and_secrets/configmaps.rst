@@ -7,7 +7,7 @@ ConfigMaps
 
 ConfigMaps allow you to decouple configuration files from container images to enhance the portability of workloads.
 
-ConfigMaps provide the following benefits:
+ConfigMaps allow you to:
 
 -  Manage configurations for different environments and services.
 -  Deploy workloads in different environments. Multiple versions are supported for configuration files so that you can update and roll back workloads easily.
@@ -23,7 +23,7 @@ Creating a ConfigMap
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. Choose **ConfigMaps and Secrets** in the navigation pane and click the **ConfigMaps** tab.
 
@@ -44,7 +44,7 @@ Creating a ConfigMap
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
       | Description                       | Description of the ConfigMap.                                                                                                            |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-      | Data                              | The workload configuration data can be used in a container or used to store the configuration data.                                      |
+      | ConfigMap Data                    | The workload configuration data can be used in a container or used to store the configuration data.                                      |
       |                                   |                                                                                                                                          |
       |                                   | Click |image1| and enter the key and value. **Key** indicates the configuration name, and **Value** indicates the configuration content. |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+

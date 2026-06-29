@@ -11,7 +11,7 @@ Creating a PVC
 
    -  You can modify or delete the PVCs automatically created by UCS on the cluster console. However, if the PVC settings on the UCS console are not modified accordingly, the modified or deleted PVCs will be re-created by UCS. You are advised to change the settings on the UCS console.
 
-   -  For a non-OTC cluster, when PVCs are used to mount cloud storage volumes, the cluster provider must support storage classes for dynamically creating PVs. Run the following command to query the storage class configuration and the interconnected backend storage resources of the cluster. For more information about storage classes, see `Storage Classes <https://kubernetes.io/docs/concepts/storage/storage-classes/>`__.
+   -  For a non-T Cloud cluster, when PVCs are used to mount cloud storage volumes, the cluster provider must support storage classes for dynamically creating PVs. Run the following command to query the storage class configuration and the interconnected backend storage resources of the cluster. For more information about storage classes, see `Storage Classes <https://kubernetes.io/docs/concepts/storage/storage-classes/>`__.
 
       .. code-block::
 
@@ -23,7 +23,7 @@ Creating a PVC
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. In the navigation pane, choose **Storage**. On the **PersistentVolumeClaims (PVCs)** tab, click **Create PVC** in the upper right corner.
 
@@ -35,8 +35,8 @@ Creating a PVC
    -  **Namespace**: namespace that the PVC will belong to. If this parameter is not specified, the default namespace is used.
    -  **Cluster**: Click |image1| to select the cluster where the PVC is to be deployed.
 
-      -  For details about the parameters for adding an OTC cluster, see :ref:`Table 1 <ucs_01_0280__table68391084401>`.
-      -  For details about the parameters for adding a non-OTC cluster, see :ref:`Table 2 <ucs_01_0280__table1057124594410>`.
+      -  For details about the parameters for adding a T Cloud cluster, see :ref:`Table 1 <ucs_01_0280__table68391084401>`.
+      -  For details about the parameters for adding a non-T Cloud cluster, see :ref:`Table 2 <ucs_01_0280__table1057124594410>`.
 
          .. important::
 
@@ -44,12 +44,12 @@ Creating a PVC
 
    .. _ucs_01_0280__table68391084401:
 
-   .. table:: **Table 1** Parameters for adding an OTC cluster
+   .. table:: **Table 1** Parameters for adding a T Cloud cluster
 
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                               |
       +===================================+===========================================================================================================================================================================+
-      | Cluster                           | Select an OTC cluster.                                                                                                                                                    |
+      | Cluster                           | Select a T Cloud cluster.                                                                                                                                                 |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Storage Class                     | -  **csi-disk**: EVS disk. Specify the AZ and disk type.                                                                                                                  |
       |                                   |                                                                                                                                                                           |
@@ -58,7 +58,7 @@ Creating a PVC
       |                                   |                                                                                                                                                                           |
       |                                   | -  **csi-nas**: indicates SFS.                                                                                                                                            |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Access Mode                       | -  If **csi-disk** is selected, **Access Mode** must be set to **ReadWriteOnce**, that is, the volume can be mounted as read-write by only a single node.                 |
+      | Access Mode                       | -  If **csi-disk** is selected, **Access Mode** must be set to **ReadWriteOnce**. This means the volume can be mounted as read-write by only a single node.               |
       |                                   | -  If **csi-nas** (file storage) is selected, **Access Mode** must be set to **ReadWriteMany**. This means the volume can be mounted as read-write by multiple nodes.     |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Capacity (GiB)                    | The capacity of the created PVC cannot be less than 10 GiB.                                                                                                               |
@@ -68,12 +68,12 @@ Creating a PVC
 
    .. _ucs_01_0280__table1057124594410:
 
-   .. table:: **Table 2** Parameters for adding a non-OTC cluster
+   .. table:: **Table 2** Parameters for adding a non-T Cloud cluster
 
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                                                                 |
       +===================================+=============================================================================================================================================================================================================+
-      | Cluster                           | Select a non-OTC cluster.                                                                                                                                                                                   |
+      | Cluster                           | Select a non-T Cloud cluster.                                                                                                                                                                               |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Storage Class                     | The storage classes supported by a cluster depend on the actual environment of the registered cluster. For details, see `Storage Classes <https://kubernetes.io/docs/concepts/storage/storage-classes/>`__. |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -82,10 +82,10 @@ Creating a PVC
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Capacity (GiB)                    | The capacity of the created PVC cannot be less than 10 GiB.                                                                                                                                                 |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Annotation                        | Set key and value and click **Confirm**. Annotations are attached to PVCs in the form of key-value pairs.                                                                                                   |
+      | Annotation                        | Set the key and value and click **Add**. Annotations are attached to PVCs in the form of key-value pairs.                                                                                                   |
       +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#. The key and value can be added repeatedly to configure differentiated settings for each cluster.
+#. Add more key-value pairs to specify differentiated settings for each cluster.
 
 #. Click **OK**. After the PVC is successfully created, you can click the PVC name to view the details.
 

@@ -2,20 +2,20 @@
 
 .. _ucs_01_0399:
 
-Tolerance Policies
-==================
+Tolerations
+===========
 
-A tolerance policy allows the scheduler to schedule pods to nodes with corresponding taints. This policy must be used together with node taints. One or more taints can be added to each node. For pods without node tolerance policy, the scheduler performs selective scheduling based on the taint effect to prevent pods from being allocated to inappropriate nodes.
+Tolerations allow the scheduler to schedule pods to nodes with corresponding taints. Tolerations must be used together with node taints. One or more taints can be added to each node. For pods without node tolerations, the scheduler performs selective scheduling based on the taint effect to prevent pods from being allocated to inappropriate nodes.
 
 .. note::
 
    In the current UCS version, the NoExecute taint policy is not supported during tolerance configuration when you create a workload.
 
-**Configuring a Tolerance Policy on the Console**
+**Configuring a Toleration on the Console**
 
 #. Log in to the UCS console.
 #. When creating a workload, click **Next: Scheduling and Differentiation**.
-#. Add a tolerance policy.
+#. Add a taint toleration.
 
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter                         | Description                                                                                                                                                                                        |

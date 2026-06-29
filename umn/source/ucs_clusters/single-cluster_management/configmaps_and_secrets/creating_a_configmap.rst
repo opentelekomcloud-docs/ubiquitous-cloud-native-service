@@ -9,7 +9,7 @@ A ConfigMap is a type of resource that stores configuration information required
 
 ConfigMaps allow you to decouple configuration files from container images to enhance the portability of workloads.
 
-ConfigMaps provide the following benefits:
+ConfigMaps allow you to:
 
 -  Manage configurations for different environments and services.
 -  Deploy workloads in different environments. Multiple versions are supported for configuration files so that you can update and roll back workloads easily.
@@ -19,7 +19,9 @@ ConfigMaps provide the following benefits:
 Creating a ConfigMap
 --------------------
 
-#. Access the cluster console. In the navigation pane, choose **ConfigMaps and Secrets**. Then, click the **ConfigMaps** tab. You can create a ConfigMap directly or using YAML. If you want to create a ConfigMap using YAML, go to :ref:`4 <ucs_01_0114__en-us_topic_0160121210_li2731182712159>`.
+#. Log in to the UCS console and access the cluster console.
+
+#. In the navigation pane, choose **ConfigMaps and Secrets**. Click the **ConfigMaps** tab. You can create a ConfigMap directly or using YAML. If you want to create a ConfigMap using YAML, go to :ref:`5 <ucs_01_0114__en-us_topic_0160121210_li2731182712159>`.
 
 #. Select the namespace that the ConfigMap will belong to.
 
@@ -40,7 +42,7 @@ Creating a ConfigMap
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Description                       | Description of the ConfigMap.                                                                                                                                                                            |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | ConfigMap Data                    | The workload configuration data can be used in a container or used to store the configuration data.                                                                                                      |
+      | Data                              | The workload configuration data can be used in a container or used to store the configuration data.                                                                                                      |
       |                                   |                                                                                                                                                                                                          |
       |                                   | Click |image1| and enter the key and value. **Key** indicates the configuration name, and **Value** indicates the configuration content.                                                                 |
       |                                   |                                                                                                                                                                                                          |
@@ -48,7 +50,7 @@ Creating a ConfigMap
       |                                   |                                                                                                                                                                                                          |
       |                                   |    ConfigMaps can be used to create workload storage volumes and configure workload environment variables. When configuring workload environment variables, ensure that the ConfigMap data is not empty. |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Label                             | Labels are attached to objects such as workloads, nodes, and Services in key-value pairs.                                                                                                                |
+      | Labels                            | Labels are attached to objects such as workloads, nodes, and Services in key-value pairs.                                                                                                                |
       |                                   |                                                                                                                                                                                                          |
       |                                   | Labels define the identifiable attributes of these objects and are used to manage and select the objects.                                                                                                |
       |                                   |                                                                                                                                                                                                          |
@@ -140,7 +142,7 @@ On the cluster console, you can also perform the operations described in :ref:`T
    +-----------------------------------+-------------------------------------------------------------------------------------------+
    | Deleting a ConfigMap              | Click **Delete** in the row where the target ConfigMap resides, and click **Yes**.        |
    +-----------------------------------+-------------------------------------------------------------------------------------------+
-   | Deleting ConfigMaps in batches    | #. Select the ConfigMap to be deleted.                                                    |
+   | Deleting ConfigMaps in batches    | #. Select the ConfigMaps to be deleted.                                                   |
    |                                   | #. Click **Delete** in the upper left corner.                                             |
    |                                   | #. Click **Yes**.                                                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------+

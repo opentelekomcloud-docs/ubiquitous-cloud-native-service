@@ -38,7 +38,7 @@ After a node is created, UCS adds labels to the node. These inherent labels cann
    +------------------------------------------+----------------------------------------------------------------------------------------------------+
    | beta.kubernetes.io/arch                  | Indicates the processor architecture of the node.                                                  |
    |                                          |                                                                                                    |
-   |                                          | For example, **amd64** indicates a AMD64-bit processor.                                            |
+   |                                          | For example, **amd64** indicates an AMD64-bit processor.                                           |
    +------------------------------------------+----------------------------------------------------------------------------------------------------+
    | beta.kubernetes.io/os                    | Indicates the operating system of the node.                                                        |
    |                                          |                                                                                                    |
@@ -50,7 +50,7 @@ After a node is created, UCS adds labels to the node. These inherent labels cann
    +------------------------------------------+----------------------------------------------------------------------------------------------------+
    | os.architecture                          | Indicates the processor architecture of the node.                                                  |
    |                                          |                                                                                                    |
-   |                                          | For example, **amd64** indicates a AMD64-bit processor.                                            |
+   |                                          | For example, **amd64** indicates an AMD64-bit processor.                                           |
    +------------------------------------------+----------------------------------------------------------------------------------------------------+
    | os.name                                  | Indicates the operating system name of the node.                                                   |
    |                                          |                                                                                                    |
@@ -99,7 +99,7 @@ Example:
 
 In the preceding toleration label, **key** is **key1**, **value** is **value1**, and **effect** is **NoSchedule**. Therefore, the pod can be scheduled to the corresponding node.
 
-The tolerance can also be set as follows, indicating that when a taint whose **key** is **key1** and **effect** is **NoSchedule** exists on a node, the pod can also be scheduled to the corresponding node.
+You can also set the toleration as follows. If a node has a taint with the key **key1** and the effect **NoSchedule**, the pod can be scheduled to that node.
 
 .. code-block::
 
@@ -111,8 +111,8 @@ The tolerance can also be set as follows, indicating that when a taint whose **k
 Managing Node Labels/Taints
 ---------------------------
 
-#. Access the cluster console.
-#. In the navigation pane, choose **Nodes**, select the target node, and click **Manage Labels and Taints**.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Nodes**. Select the target node and click **Manage Labels and Taints**.
 #. Click |image1| to add a node label or taint. You can add a maximum of 10 operations at a time.
 
    -  Choose **Add/Update** or **Delete**.

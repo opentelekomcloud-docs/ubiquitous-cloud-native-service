@@ -8,7 +8,7 @@ Overview
 Fleets
 ------
 
-A fleet contains multiple clusters. You can use fleets to classify associated clusters. You can also use a fleet for the unified management of multiple clusters, including permissions management, security policy configuration, configuration management, and multi-cluster orchestration.
+A fleet contains multiple clusters. You can use fleets to classify associated clusters. You can also use a fleet for the unified management of multiple clusters, including permissions management, security policy configuration, and multi-cluster orchestration.
 
 Constraints
 -----------

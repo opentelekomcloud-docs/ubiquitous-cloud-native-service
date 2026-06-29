@@ -22,7 +22,7 @@ Environment variables can be set in the following modes:
 
 -  **Custom**
 -  **ConfigMap**: Import all keys in a ConfigMap as environment variables.
--  **ConfigMap Key**: Import a key in a ConfigMap as the value of an environment variable. For example, if you import **configmap_value** of **configmap_key** in ConfigMap **configmap-example** as the value of environment variable **key1**, an environment variable named **key1** with its value **is configmap_value** exists in the container.
+-  **ConfigMap Key**: Import a key in a ConfigMap as the value of an environment variable. For example, if you import **configmap_value** of **configmap_key** in ConfigMap **configmap-example** as the value of environment variable **key1**, there will be an environment variable named **key1** with value **configmap_value** in the container.
 -  **Secret**: Import all keys in a secret as environment variables.
 -  **Secret Key**: Import the value of a key in a secret as the value of an environment variable. For example, if you import **secret_value** of **secret_key** in secret **secret-example** as the value of environment variable **key2**, an environment variable named **key2** with its value **secret_value** exists in the container.
 -  **Variable/Variable Reference**: Use the field defined by a pod as the value of the environment variable, for example, the pod name.
@@ -31,7 +31,7 @@ Environment variables can be set in the following modes:
 Environment Variables
 ---------------------
 
-#. Log in to the UCS console and access the **Federation** page. When creating a workload, configure container information and select **Environment Variable**.
+#. Log in to the UCS console and access the federation page. When creating a workload, configure container information and select **Environment Variable**.
 #. Configure environment variables.
 
 YAML Example

@@ -13,7 +13,7 @@ A PVC provides persistent storage management for containers in multiple clouds. 
 
    -  You can modify or delete the PVCs automatically created by UCS on the cluster console. However, if the PVC settings on the UCS console are not modified accordingly, the modified or deleted PVCs will be re-created by UCS. You are advised to change the settings on the UCS console.
 
-   -  For a non-OTC cluster, when PVCs are used to mount cloud storage volumes, the cluster provider must support storage classes for dynamically creating PVs. Run the following command to query the storage class configuration and the interconnected backend storage resources of the cluster. For more information about storage classes, see `Storage Classes <https://kubernetes.io/docs/concepts/storage/storage-classes/>`__.
+   -  For a non-T Cloud cluster, when PVCs are used to mount cloud storage volumes, the cluster provider must support storage classes for dynamically creating PVs. Run the following command to query the storage class configuration and the interconnected backend storage resources of the cluster. For more information about storage classes, see `Storage Classes <https://kubernetes.io/docs/concepts/storage/storage-classes/>`__.
 
       .. code-block::
 

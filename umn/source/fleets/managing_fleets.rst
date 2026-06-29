@@ -5,7 +5,7 @@
 Managing Fleets
 ===============
 
-This section describes how to create a fleet, add clusters to the fleet, adding a permission policy for the fleet, remove clusters from the fleet, unregister clusters from the fleet, and delete the fleet.
+This section describes how to create a fleet, add clusters to the fleet, add a permission policy for the fleet, remove clusters from the fleet, unregister clusters from the fleet, and delete the fleet.
 
 Creating a Fleet
 ----------------
@@ -30,11 +30,11 @@ Adding a Cluster
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. In the card view of the target fleet, click **Add Cluster**, or click |image1| in the upper right corner.
+#. In the card of the target fleet, click **Add Cluster**, or click |image1| in the upper right corner.
 
    You can also click the fleet name to access the fleet console. In the navigation pane, choose **Container Clusters**. On the displayed page, click **Add Cluster** in the upper right corner.
 
-#. Select one or more existing clusters. A cluster can only be added to one fleet. The clusters displayed in the list are those that do not been added to any fleet.
+#. Select one or more existing clusters. A cluster can be added to only one fleet. The clusters displayed in the list are not added to any fleet.
 
    .. note::
 
@@ -52,7 +52,7 @@ Adding Permissions
 
 #. Click **Add Permission** in the upper right corner.
 
-#. In the window that slides from the right, confirm the cluster or fleet name, set **Namespace** (for example, select **All namespaces**), select the target user or user group, and set **Permission Type**.
+#. On the slide-out panel, confirm the cluster or fleet name, set **Namespace** (for example, select **All namespaces**), select the target user or user group, and set **Permission Type**.
 
    -  **User/User Group**: A user group can contain multiple users, and a user can be added to multiple user groups. A user has all the permissions of the user group that the user belongs to.
    -  **Namespace**: You can select **All namespaces** or other namespaces. **All namespaces** includes the existing namespace of the fleet and the namespace to be added to the fleet. If you select this option, you cannot select other namespaces. If you do not select this option, UCS provides several common namespaces, such as **default**, **kube-system**, and **kube-public**. You can also add a namespace, which should exist in the cluster.
@@ -74,7 +74,7 @@ Removing a Cluster from a Fleet
 
 #. On the **Fleets** tab, click the fleet name to access the fleet console.
 
-#. In the navigation pane, choose **Container Clusters**. In the card view of the target cluster, click |image2| in the upper right corner.
+#. In the navigation pane, choose **Container Clusters**. In the card of the target cluster, click |image2| in the upper right corner.
 
 #. Read the precautions carefully and confirm the risks. Then click **OK**.
 
@@ -87,7 +87,7 @@ Unregistering a Cluster from a Fleet
 
 #. On the **Fleets** tab, click the fleet name to access the fleet console.
 
-#. In the navigation pane, choose **Container Clusters**. In the card view of the target cluster, click |image3| in the upper right corner.
+#. In the navigation pane, choose **Container Clusters**. In the card of the target cluster, click |image3| in the upper right corner.
 
 #. In the **Unregister Cluster** dialog box, read the precautions carefully, confirm the risks, and click **OK**.
 
@@ -98,7 +98,7 @@ Unregistering a Cluster from a Fleet
 Deleting a Fleet
 ----------------
 
-If a fleet is no longer used, you can delete it. There are two restrictions on deletion: there is no cluster in the fleet and cluster federation has been disabled for the fleet. If there are clusters in the fleet, you can :ref:`remove the clusters from the fleet <ucs_01_0004__section171856259306>` and then add them to another fleet. If cluster federation has been enabled for the fleet, disable it following :ref:`Disabling Cluster Federation <ucs_01_0018__section88211316259>`.
+If a fleet is no longer used, you can delete it. Before deleting a fleet, ensure that the fleet does not contain any clusters and cluster federation has been disabled. If there are clusters in the fleet, you can :ref:`remove the clusters from the fleet <ucs_01_0004__section171856259306>` and then add them to another fleet. If cluster federation has been enabled for the fleet, disable it following :ref:`Disabling Cluster Federation <ucs_01_0018__section88211316259>`.
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 #. On the **Fleets** tab, locate the target fleet and click |image4| in the upper right corner.

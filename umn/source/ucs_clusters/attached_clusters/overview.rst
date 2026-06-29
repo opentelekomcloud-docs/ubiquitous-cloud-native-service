@@ -19,9 +19,15 @@ Attached clusters refer to third-party Kubernetes clusters that comply with the 
 Access Mode
 -----------
 
-Cluster providers or on-premises data centers have different inbound port rules for attached clusters to prevent inbound traffic from ports other than the specific ones. UCS uses the cluster network agent to connect to clusters. You do not need to enable any inbound port on the firewall. Instead, only the cluster agent program is required to establish sessions with UCS in the outbound direction.
+Cluster providers or on-premises data centers have different inbound port rules for attached clusters to prevent inbound traffic from ports other than the specific ones. UCS uses the cluster network agent to access clusters. You do not need to enable any inbound port on the firewall. Instead, only the cluster agent program is required to establish sessions with UCS in the outbound direction.
 
 There are two methods with different advantages for attached clusters to connect to UCS:
 
 -  :ref:`Over a public network <ucs_01_0005>`: flexibility, cost-effectiveness, and easy access
 -  :ref:`Over a private network <ucs_01_0006>`: high speed, low latency, stability, and security
+
+.. important::
+
+   The list and create permissions of RBAC are required for fine-grained permissions control when an attached cluster is registered with and connected to UCS.
+
+   RBAC permissions include the following four resources: Roles, RoleBindings, ClusterRoles, and ClusterRoleBindings.

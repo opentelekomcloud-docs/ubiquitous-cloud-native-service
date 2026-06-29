@@ -6,7 +6,7 @@ UCS Clusters
 ============
 
 -  :ref:`Overview <ucs_01_0200>`
--  :ref:`OTC Clusters <ucs_01_0282>`
+-  :ref:`T Cloud Clusters <ucs_01_0282>`
 -  :ref:`Attached Clusters <ucs_01_0002>`
 -  :ref:`Single-Cluster Management <ucs_01_0007>`
 
@@ -15,6 +15,6 @@ UCS Clusters
    :hidden: 
 
    overview
-   otc_clusters
+   t_cloud_clusters
    attached_clusters/index
    single-cluster_management/index

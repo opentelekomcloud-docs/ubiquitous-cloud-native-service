@@ -15,14 +15,14 @@ Namespaces that you create on the cluster console apply only to the current clus
 Creating a Namespace
 --------------------
 
-#. Access the cluster details page.
+#. Log in to the UCS console and access the cluster console.
 #. Choose **Namespaces** in the navigation pane, click **Create Namespace** in the upper right corner, and configure parameters.
 
-   -  **Namespace Name**: Name of the namespace, which must be unique in a cluster.
+   -  **Namespace Name**: name of the namespace, which must be unique in a cluster.
 
-   -  **Description**: Description of the namespace.
+   -  **Description**: description of the namespace.
 
-   -  **Quota Management**: If this function is enabled, you can configure resource quotas. Resource quotas can limit the amount of resources available in namespaces, achieving resource allocation by namespace.
+   -  **Quota Management**: If this function is enabled, you can configure resource quotas. Resource quotas can limit the number of resources available in namespaces, achieving resource allocation by namespace.
 
       If you do not enable this function, you can click **Manage Quota** in the namespace list to configure resource quotas after the namespace is created. For details, see :ref:`Configuring Resource Quotas in a Namespace <ucs_01_0117__en-us_topic_0167389656_section1883212914267>`.
 
@@ -35,24 +35,24 @@ Deleting a Namespace
 
    Deleting a namespace will delete all data resources related to the namespace. Exercise caution when performing this operation.
 
-#. Access the cluster details page.
-#. In the navigation pane, choose **Namespaces**, select the target namespace, and choose **More** > **Delete**.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Namespaces**. Locate the target namespace and choose **More** > **Delete** in the **Operation** column.
 
 .. _ucs_01_0117__en-us_topic_0167389656_section1883212914267:
 
 Configuring Resource Quotas in a Namespace
 ------------------------------------------
 
-Resource quotas can limit the amount of resources available in namespaces, achieving resource allocation by namespace.
+Resource quotas can limit the number of resources available in namespaces, achieving resource allocation by namespace.
 
-Namespace-level resource quotas limit the amount of resources available to teams or users when these teams or users use the same cluster. The quotas include the total number of a type of objects and the total amount of compute resources (CPU and memory) consumed by the objects.
+Namespace-level resource quotas limit the number of resources available to teams or users when these teams or users use the same cluster. The quotas include the total number of a type of objects and the total number of compute resources (CPU and memory) consumed by the objects.
 
 .. important::
 
    The **kube-public** and **kube-system** namespaces do not support resource quota settings.
 
-#. Access the cluster details page.
-#. In the navigation pane, choose **Namespaces**, locate the target namespace, and click **Manage Quota** in the **Operation** column.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Namespaces**. Locate the target namespace and click **Manage Quota** in the **Operation** column.
 #. Configure resource quotas.
 
    .. important::
@@ -62,10 +62,10 @@ Namespace-level resource quotas limit the amount of resources available to teams
 
    -  **CPU (cores)**: maximum number of CPU cores that can be allocated to workload pods in the namespace.
    -  **Memory (MiB)**: maximum amount of memory that can be allocated to workload pods in the namespace.
-   -  **StatefulSet**: Maximum number of StatefulSets that can be created in the namespace.
-   -  **Deployment**: Maximum number of Deployments that can be created in the namespace.
-   -  **Job**: Maximum number of jobs that can be created in the namespace.
-   -  **Cron Job**: Maximum number of cron jobs that can be created in the namespace.
+   -  **StatefulSets**: maximum number of StatefulSets that can be created in the namespace.
+   -  **Deployments**: maximum number of Deployments that can be created in the namespace.
+   -  **Jobs**: maximum number of jobs that can be created in the namespace.
+   -  **CronJobs**: maximum number of CronJobs that can be created in the namespace.
    -  **Pods**: maximum number of pods, including those in terminated state, that can be created in the namespace.
    -  **Pods** (excluding terminated pods): maximum number of pods in a non-terminated state that can be created in the namespace.
    -  **Services**: maximum number of Services, including those in terminated state, that can be created in the namespace.

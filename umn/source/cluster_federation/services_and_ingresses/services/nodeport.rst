@@ -28,15 +28,15 @@ The procedure of creating a Service is the same for different types of workloads
    -  **Type**: Select **NodePort**.
    -  **Affinity**
 
-      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workloads associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
-      -  **Node-level**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
+      -  **Cluster**: The IP addresses and access ports of all nodes in a cluster can be used to access the workload associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
+      -  **Node**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
 
    -  **Port**
 
       -  **Protocol**: Select **TCP** or **UDP**.
-      -  **Service Port**: Port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
-      -  **Container Port**: Port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
-      -  **Node Port**: Specify a port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number range is 30000-32767. You are advised to select **Auto**.
+      -  **Service Port**: port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
+      -  **Container Port**: port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
+      -  **Node Port**: port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number range is 30000-32767. You are advised to select **Auto**.
 
          -  **Auto**: The system automatically assigns a port number.
          -  **Custom**: Specify a fixed node port. The port number range is 30000-32767. Ensure that the port is unique in a cluster.
@@ -55,7 +55,7 @@ After Workload Creation
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. In the navigation pane, choose **Services and Ingresses**.
 
@@ -69,15 +69,15 @@ After Workload Creation
    -  **Type**: Select **NodePort**.
    -  **Affinity**
 
-      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workloads associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
-      -  **Node-level**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
+      -  **Cluster**: The IP addresses and access ports of all nodes in a cluster can be used to access the workload associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
+      -  **Node**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
 
    -  **Port**
 
       -  **Protocol**: Select **TCP** or **UDP**.
-      -  **Service Port**: Port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
-      -  **Container Port**: Port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
-      -  **Node Port**: Specify a port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number range is 30000-32767. You are advised to select **Auto**.
+      -  **Service Port**: port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
+      -  **Container Port**: port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
+      -  **Node Port**: port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number range is 30000-32767. You are advised to select **Auto**.
 
          -  **Auto**: The system automatically assigns a port number.
          -  **Custom**: Specify a fixed node port. The port number ranges from **30000** to **32767**. Ensure that the port is unique in a cluster.
@@ -89,7 +89,7 @@ After Workload Creation
       -  **Workload**: Select an existing workload. If your workload is not displayed in the list, click |image2| to refresh it.
       -  **Label**: After a workload is selected, its labels are displayed and cannot be modified.
 
-#. Click **OK**. After the Service is created, you can view it in the list on the **Services** tab page.
+#. Click **OK**. After the Service is created, you can view it in the list on the **Services** tab.
 
 #. Obtain the access address.
 

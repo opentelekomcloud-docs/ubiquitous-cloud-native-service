@@ -10,7 +10,7 @@ To mount a PVC to a cluster, the cluster provider must support the StorageClass 
 Creating a PVC
 --------------
 
-#. Access the cluster console.
+#. Log in to the UCS console and access the cluster console.
 #. In the navigation pane, choose **Storage**. On the displayed page, click the **PVCs** tab. Then click **Create from YAML** in the upper right corner.
 #. Write a YAML file for the PVC.
 #. Click **OK**.

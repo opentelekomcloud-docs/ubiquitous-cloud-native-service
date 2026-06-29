@@ -14,13 +14,15 @@ Creating a DaemonSet
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. In the navigation pane, choose **Workloads**. On the displayed page, click the **DaemonSets** tab. Then, click **Create from Image** in the upper right corner.
 
    .. note::
 
       To use an existing YAML file to create a DaemonSet, click **Create from YAML** in the upper right corner.
+
+      If "ApplyPolicyFailed" is generated after an application is created, check whether "ApplyPolicySucceed" is generated. If yes, ignore "ApplyPolicyFailed". If no, contact the UCS on-call personnel for support.
 
 #. Configure basic information about the workload.
 
@@ -65,7 +67,7 @@ Creating a DaemonSet
          |                                   | An init container is a special container that runs before app containers in a pod. For details, see `Init Containers <https://kubernetes.io/docs/concepts/workloads/pods/init-containers/>`__.                                                                                           |
          +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   -  **Lifecycle**: The lifecycle callback functions can be called in specific phases of the container. For example, if you want the container to perform a certain operation before stopping, set the corresponding function. Currently, lifecycle callback functions, such as startup, post-start, and pre-stop are provided. For details, see :ref:`Setting Container Lifecycle Parameters <ucs_01_0261>`.
+   -  **Lifecycle**: The lifecycle callback functions can be called in specific phases of the container. For example, if you want the container to perform a certain operation before stopping, set the corresponding function. Currently, lifecycle callback functions, such as startup, post-start, and pre-stop functions, are provided. For details, see :ref:`Setting Container Lifecycle Parameters <ucs_01_0261>`.
    -  **Health Check**: Set health check parameters to periodically check the health status of the container during container running. For details, see :ref:`Setting Health Check for a Container <ucs_01_0262>`.
    -  **Environment Variable**: Environment variables affect the way a running container will behave. Configuration items set by environment variables will not change if the pod lifecycle ends. For details, see :ref:`Setting Environment Variables <ucs_01_0263>`.
    -  **Data Storage**: Store container data using **Local Volumes** and **PersistentVolumeClaims (PVCs)**. You are advised to use PVCs to store workload pod data on a cloud volume. If you store pod data on a local volume and a fault occurs on the node, the data cannot be restored. For details about container storage, see :ref:`Storage <ucs_01_0276>`.
@@ -79,7 +81,7 @@ Creating a DaemonSet
 
    You can also create a Service after creating a workload. For details, see :ref:`ClusterIP <ucs_01_0271>` and :ref:`NodePort <ucs_01_0272>`.
 
-   -  **Name**: name of the Service to be added. It is customizable and must be unique.
+   -  **Name**: name of the Service to be added. It is user-defined and must be unique.
    -  **Type**
 
       -  **ClusterIP**: The Service is only reachable from within the cluster.
@@ -87,25 +89,25 @@ Creating a DaemonSet
 
    -  **Affinity** (for node access only)
 
-      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workloads associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
-      -  **Node-level**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
+      -  **Cluster**: The IP addresses and access ports of all nodes in a cluster can be used to access the workload associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
+      -  **Node**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
 
    -  **Port**
 
       -  **Protocol**: Select **TCP** or **UDP**.
-      -  **Service Port**: Port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
-      -  **Container Port**: Port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
-      -  **Node Port** (for NodePort only): Port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number ranges from **30000** to **32767**. You are advised to select **Auto**.
+      -  **Service Port**: port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
+      -  **Container Port**: port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
+      -  **Node Port** (for NodePort only): port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number ranges from **30000** to **32767**. You are advised to select **Auto**.
 
          -  **Auto**: The system automatically assigns a port number.
-         -  **Custom**: Specify a fixed node port. The port number ranges from **30000** to **32767**. Ensure that the port is unique in a cluster.
+         -  **Custom**: Specify a fixed node port. The port number ranges from 30000 to 32767. Ensure that the port is unique in a cluster.
 
-#. (Optional) Click **Expand** to set advanced settings for the workload.
+#. (Optional) Click **Show more** to specify advanced settings for the workload.
 
-   -  **Upgrade**: upgrade mode of the DaemonSet, including **Replace upgrade** and **Rolling upgrade**. For details, see :ref:`Configuring a Workload Upgrade Policy <ucs_01_0264>`.
+   -  **Upgrade Policy**: upgrade mode of the DaemonSet. You can set **Upgrade Mode** to **Replace** or **Rolling**. For details, see :ref:`Configuring a Workload Upgrade Policy <ucs_01_0264>`.
 
-      -  **Rolling upgrade**: An old pod is gradually replaced with a new pod. During the upgrade, service traffic is evenly distributed to the old and new pods to ensure service continuity.
-      -  **Replace upgrade**: You need to delete old pods manually before new pods are created. Services will be interrupted during a replace upgrade.
+      -  **Rolling**: An old pod is gradually replaced with a new pod. During the upgrade, service traffic is evenly distributed to the old and new pods to ensure service continuity.
+      -  **Replace**: You need to delete old pods manually before new pods are created. Services will be interrupted during a replace upgrade.
 
    -  **Scheduling**: You can set affinity and anti-affinity to implement planned scheduling for pods. For details, see :ref:`Configuring a Scheduling Policy (Affinity/Anti-affinity) <ucs_01_0265>`.
    -  **Labels and Annotations**: You can click **Confirm** to add a label or annotation for the pod. The key of the new label or annotation cannot be the same as that of an existing one.
@@ -122,7 +124,7 @@ Creating a DaemonSet
 
    -  **Differentiated Settings**
 
-      When deploying a workload in multiple clusters, you can configure differentiated settings for these clusters. Click |image2| in the upper right corner of a target cluster to configure differentiated settings. The configured differentiated container settings take effect only for this cluster.
+      When deploying a workload in multiple clusters, you can specify differentiated settings for these clusters. Click |image2| in the upper right corner of the target cluster to specify differentiated settings. The settings take effect only for this cluster.
 
       For parameter description, see :ref:`Container Settings <ucs_01_0255__li102351132171611>`.
 
