@@ -2,15 +2,15 @@
 
 .. _ucs_01_0282:
 
-OTC Clusters
-============
+T Cloud Clusters
+================
 
-You can register OTC clusters (CCE standard clusters and CCE Turbo clusters) with UCS with just a few clicks. After the registration is complete, clusters can be managed automatically.
+You can register T Cloud clusters (CCE standard clusters and CCE Turbo clusters) with UCS with just a few clicks. After the registration is complete, clusters can be managed automatically.
 
 Constraints
 -----------
 
--  Only **OTC accounts** or users with the **UCS FullAccess** permissions can register clusters.
+-  Only **T Cloud accounts** or users with the **UCS FullAccess** permissions can register clusters.
 -  If you are connecting a foreign cluster to UCS, ensure that this connection and the subsequent actions you will take comply with the local laws and regulations.
 -  Ensure that your Kubernetes cluster version is 1.19 or later.
 
@@ -24,7 +24,7 @@ Procedure
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. In the card view of **OTC clusters**, click **Register Cluster**.
+#. In the **T Cloud clusters** card, click **Register Cluster**.
 
 #. Select the CCE standard cluster or CCE Turbo cluster to be registered. Select a fleet and click **OK**.
 

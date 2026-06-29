@@ -10,8 +10,8 @@ An ingress uses load balancers as the entry for external traffic. Compared with 
 Procedure
 ---------
 
-#. Access the cluster console.
-#. In the navigation pane, choose **Services & Ingresses**. On the displayed page, click the **Ingresses** tab and select the namespace that the ingress belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Services and Ingresses**. Click the **Ingresses** tab and select the namespace that the ingress belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
 #. Click **Create Ingress** in the upper right corner and configure the parameters.
 
    -  **Name**: name of the ingress to be created, which can be self-defined.

@@ -8,12 +8,12 @@ Overview
 Introduction
 ------------
 
-Cluster federation is a multi-cloud container orchestration capability provided by Karmada. Cluster federation aims to manage multi-cluster applications in cross-cloud and cross-region scenarios, with features such as unified multi-cluster management, application deployment, service discovery, and auto scaling.
+Cluster federation provides multi-cloud container orchestration based on Karmada. It helps you manage multi-cluster applications in cross-cloud and cross-region scenarios, with features such as unified multi-cluster management, application deployment, service discovery, and auto scaling.
 
 Constraints
 -----------
 
-Only **OTC accounts** or users with the **UCS FullAccess** permissions can enable or disable cluster federation.
+Only **T Cloud accounts** or users with the **UCS FullAccess** permissions can enable or disable cluster federation.
 
 Usage
 -----

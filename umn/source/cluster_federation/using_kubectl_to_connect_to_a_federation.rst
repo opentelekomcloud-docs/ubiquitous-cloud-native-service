@@ -29,7 +29,7 @@ Prerequisites
 Using kubectl to Connect to a Federation
 ----------------------------------------
 
-#. Log in to the UCS console and click the fleet name to access the fleet console. Then, click **kubectl** in **Fleet Info**.
+#. Log in to the UCS console and click the fleet name to access the fleet console. Click **kubectl** in **Fleet Info**.
 
 #. Select a project, VPC, master node subnet, and validity period as prompted and click **Download** to download the kubectl configuration file.
 

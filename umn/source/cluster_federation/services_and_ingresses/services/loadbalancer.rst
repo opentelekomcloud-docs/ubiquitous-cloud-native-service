@@ -17,7 +17,7 @@ Creating a Service
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. In the navigation pane, choose **Services and Ingresses**.
 
@@ -31,14 +31,14 @@ Creating a Service
    -  **Type**: Select **LoadBalancer**.
    -  **Affinity**
 
-      -  **Cluster-level**: The IP addresses and ports of all nodes in a cluster can access the workload associated with the Service. However, accessing the Service may result in a performance decrease due to route redirection, and the client's source IP address may not be obtainable.
-      -  **Node-level**: Only the IP address and port of the node where the workload is located can access the workload associated with the Service. Accessing the Service will not result in a performance decrease due to route redirection, and client's source IP address can be obtained.
+      -  **Cluster**: The IP addresses and access ports of all nodes in a cluster can be used to access the workload associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
+      -  **Node**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
 
    -  **Port**
 
       -  **Protocol**: Select **TCP** or **UDP**.
       -  **Service Port**: Specify a port to map a container port to the load balancer. The port range is 1-65535. The port will be used when the application is accessed through the load balancer.
-      -  **Container Port**: Port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
+      -  **Container Port**: port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
 
    -  **Cluster**: Add a cluster where load balancers are to be deployed and complete differentiated load balancer settings.
 

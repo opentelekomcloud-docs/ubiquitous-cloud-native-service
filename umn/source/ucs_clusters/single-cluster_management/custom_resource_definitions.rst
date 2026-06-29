@@ -10,7 +10,7 @@ Custom Resource Definitions (CRDs) are custom resource objects similar to Deploy
 Procedure
 ---------
 
-#. Access the cluster details page.
+#. Log in to the UCS console and access the cluster console.
 #. In the navigation pane, choose **Custom Resources**. Then, click **Create from YAML** in the upper right corner.
 #. Edit the YAML file online or import one, and click **OK**.
 #. Other operations:

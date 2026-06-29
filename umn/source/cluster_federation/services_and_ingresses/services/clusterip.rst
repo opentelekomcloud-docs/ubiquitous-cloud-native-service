@@ -46,7 +46,7 @@ After Workload Creation
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its details page.
+#. On the **Fleets** tab, click the name of the federation-enabled fleet to access its console.
 
 #. In the navigation pane, choose **Services and Ingresses**.
 
@@ -71,7 +71,7 @@ After Workload Creation
       -  **Workload**: Select an existing workload. If your workload is not displayed in the list, click |image2| to refresh it.
       -  **Label**: After a workload is selected, its labels are displayed and cannot be modified.
 
-#. Click **OK**. After the Service is created, you can view it in the list on the **Services** tab page.
+#. Click **OK**. After the Service is created, you can view it in the list on the **Services** tab.
 
 Related Operations
 ------------------

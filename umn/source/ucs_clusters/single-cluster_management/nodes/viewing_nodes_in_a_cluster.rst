@@ -10,7 +10,7 @@ After a cluster is connected to UCS, you can access the cluster console from UCS
 Procedure
 ---------
 
-#. Access the cluster console.
+#. Log in to the UCS console and access the cluster console.
 #. In the navigation pane, choose **Nodes** to view the nodes in a cluster.
 #. Choose **More** > **View Pods** in the **Operation** column of the target node to view pods running on the current node.
 #. Click **View Events** to view node events.

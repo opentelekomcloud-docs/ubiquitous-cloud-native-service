@@ -18,13 +18,13 @@ Currently, there are two scheduling policies: cluster weights and automatic bala
 
    .. table:: **Table 1** Scheduling policies
 
-      +-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Policy          | Description                                                                                                                                                     |
-      +=================+=================================================================================================================================================================+
-      | Cluster weights | You need to select clusters and configure their weights. Pods are allocated to clusters based on the :ref:`cluster weights <ucs_01_0037__section042702214566>`. |
-      +-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Auto balancing  | The system automatically selects clusters to allocate pods based on the number of remaining pods. No extra configuration is required.                           |
-      +-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Policy         | Description                                                                                                                                                     |
+      +================+=================================================================================================================================================================+
+      | Weight         | You need to select clusters and configure their weights. Pods are allocated to clusters based on the :ref:`cluster weights <ucs_01_0037__section042702214566>`. |
+      +----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Auto balancing | The system automatically selects clusters to allocate pods based on the number of remaining pods. No extra configuration is required.                           |
+      +----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _ucs_01_0037__section042702214566:
 
@@ -67,45 +67,30 @@ There are seven pods that are assigned to three clusters named member1, member2,
 
    One pod is first allocated to member1 and the remaining pod to member2 or member3 at random.
 
-Tolerance Policies
-------------------
+Tolerations
+-----------
 
-A tolerance policy allows the scheduler to schedule pods to clusters with corresponding taints. This policy must be used together with cluster taints.
+Tolerations allow the scheduler to schedule pods to clusters with corresponding taints. Tolerations must be used together with cluster taints.
 
-**Using the Default Tolerance Policy**
+**Using Default Tolerations**
 
-When you create a workload, UCS configures a default tolerance policy for your workload. The default tolerance policy adds taints listed in :ref:`Table 2 <ucs_01_0037__table7136162420189>` to a faulty cluster. If the tolerance duration is exceeded, all pods in the cluster will be automatically evicted.
+When you create a workload, UCS configures the following tolerations for your workload by default. The default tolerations tolerate the taints shown in :ref:`Table 2 <ucs_01_0037__table7136162420189>`. These taints will be automatically added to the cluster if the cluster becomes faulty.
+
+- key: cluster.karmada.io/not-ready
+
+operator: Exists
+
+- key: cluster.karmada.io/unreachable
+
+operator: Exists
 
 .. _ucs_01_0037__table7136162420189:
 
 .. table:: **Table 2** Taints for faulty clusters
 
-   +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Taint Key                      | Tolerance Policy                                                                                                                                                  |
-   +================================+===================================================================================================================================================================+
-   | cluster.karmada.io/not-ready   | When the cluster is not ready, this taint is automatically added. If the tolerance duration is exceeded, all pods in the cluster will be automatically evicted.   |
-   +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | cluster.karmada.io/unreachable | When the cluster is unavailable, this taint is automatically added. If the tolerance duration is exceeded, all pods in the cluster will be automatically evicted. |
-   +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-**Configuring a Tolerance Policy on the Console**
-
-#. Log in to the UCS console.
-#. When creating a workload, click **Next: Scheduling and Differentiation**.
-#. Add a tolerance policy.
-
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter                         | Description                                                                                                                                                                                        |
-   +===================================+====================================================================================================================================================================================================+
-   | Taint Key                         | Taint key of the cluster.                                                                                                                                                                          |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Operator                          | -  **Equal**: matches the nodes with the specified taint key (mandatory) and value. If the taint value is left blank, all taints with the key the same as the specified taint key will be matched. |
-   |                                   | -  **Exists**: matches the nodes with the specified taint key. In this case, the taint value cannot be specified. If the taint key is left blank, all taints will be tolerated.                    |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Taint Value                       | -  If the value of **Operator** is **Exists**, the value attribute can be omitted.                                                                                                                 |
-   |                                   | -  If the value of **Operator** is **Equal**, the relationship between the key and value is **Equal**.                                                                                             |
-   |                                   | -  If **Operator** is not specified, the default value is **Equal**.                                                                                                                               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Taint Policy                      | -  **All**: All taint policies are matched.                                                                                                                                                        |
-   |                                   | -  **NoSchedule**: Only the **NoSchedule** taint is matched.                                                                                                                                       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   ============================== ============
+   Taint Key                      Taint Policy
+   ============================== ============
+   cluster.karmada.io/not-ready   NoSchedule
+   cluster.karmada.io/unreachable NoSchedule
+   ============================== ============

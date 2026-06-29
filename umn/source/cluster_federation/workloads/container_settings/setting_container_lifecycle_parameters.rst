@@ -41,8 +41,8 @@ If the commands and arguments used to run a container are set during application
    | [touch]          | [/root/test] | [mkdir]                    | [/opt/test]                   | [mkdir /opt/test]  |
    +------------------+--------------+----------------------------+-------------------------------+--------------------+
 
-#. Log in to the UCS console and access the **Federation** page. When creating a workload, configure container information and select **Lifecycle**.
-#. Enter a command and arguments on the **Startup Command** tab page.
+#. Log in to the UCS console and access the federation page. When creating a workload, configure container information and select **Lifecycle**.
+#. On the **Startup Command** tab, enter a command and arguments.
 
    .. table:: **Table 2** Container startup command
 
@@ -67,10 +67,10 @@ If the commands and arguments used to run a container are set during application
 Post-Start Processing
 ---------------------
 
-#. Log in to the UCS console and access the **Federation** page. When creating a workload, configure container information and select **Lifecycle**.
-#. Set the post-start processing parameters on the **Post-Start** tab page.
+#. Log in to the UCS console and access the federation page. When creating a workload, configure container information and select **Lifecycle**.
+#. On the **Post-Start** tab, configure the parameters.
 
-   .. table:: **Table 3** Post-start processing parameters
+   .. table:: **Table 3** Post-Start parameters
 
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                                        |
@@ -100,10 +100,10 @@ Post-Start Processing
 Pre-Stop Processing
 -------------------
 
-#. Log in to the UCS console and access the **Federation** page. When creating a workload, configure container information and select **Lifecycle**.
-#. Set the pre-start processing parameters on the **Pre-Stop** tab page.
+#. Log in to the UCS console and access the federation page. When creating a workload, configure container information and select **Lifecycle**.
+#. On the **Pre-Stop** tab, configure the parameters.
 
-   .. table:: **Table 4** Pre-stop processing parameters
+   .. table:: **Table 4** Pre-Stop parameters
 
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                                      |

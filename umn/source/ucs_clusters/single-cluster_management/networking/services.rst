@@ -24,11 +24,11 @@ Services provide fixed modes for accessing workloads in a cluster. You can creat
 ClusterIP
 ---------
 
-#. Access the cluster console.
-#. In the navigation pane, choose **Services & Ingresses**. On the displayed page, click the **Services** tab and select the namespace that the Service belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Services and Ingresses**. Click the **Services** tab and select the namespace that the Service belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
 #. Click **Create Service** in the upper right corner and configure the parameters.
 
-   -  **Service Name**: Can be the same as the workload name.
+   -  **Service**: Enter a custom Service name, which can be the same as the workload name.
    -  **Service Type**: Select **ClusterIP**.
    -  **Namespace**: Set it to the namespace that the workload belongs to.
    -  **Selector**: Add a label and click **Add**. A Service selects a pod based on the added label. You can also click **Reference Workload Label** to reference the label of an existing workload. In the dialog box that is displayed, select a workload and click **OK**.
@@ -45,15 +45,15 @@ ClusterIP
 NodePort
 --------
 
-#. Access the cluster console.
-#. In the navigation pane, choose **Services & Ingresses**. On the displayed page, click the **Services** tab and select the namespace that the Service belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Services and Ingresses**. Click the **Services** tab and select the namespace that the Service belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
 #. Click **Create Service** in the upper right corner and configure the parameters.
 
-   -  **Service Name**: Can be the same as the workload name.
+   -  **Service**: Enter a custom Service name, which can be the same as the workload name.
    -  **Service Type**: Select **NodePort**.
    -  **Service Affinity**
 
-      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workloads associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
+      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workload associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
       -  **Node-level**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
 
    -  **Namespace**: Set it to the namespace that the workload belongs to.
@@ -63,7 +63,7 @@ NodePort
       -  **Protocol**: Select a protocol used by the Service.
       -  **Service Port**: Port mapped to the container port at the cluster-internal IP address. The application can be accessed at <*cluster-internal IP address*>:<*access port*>. The port number range is 1-65535.
       -  **Container Port**: Port on which the workload listens, defined in the container image. For example, the Nginx application listens on port 80 (container port).
-      -  **Node Port**: Port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number range is 30000-32767. You are advised to select **Auto**.
+      -  **Node Port**: port to which the container port will be mapped when the node private IP address is used for accessing the application. The port number range is 30000-32767. You are advised to select **Auto**.
 
          -  **Auto**: The system automatically assigns a port number.
          -  **Custom**: Specify a fixed node port. The port number range is 30000-32767. Ensure that the port is unique in a cluster.
@@ -75,15 +75,15 @@ NodePort
 LoadBalancer
 ------------
 
-#. Access the cluster console.
-#. In the navigation pane, choose **Services & Ingresses**. On the displayed page, click the **Services** tab and select the namespace that the Service belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
+#. Log in to the UCS console and access the cluster console.
+#. In the navigation pane, choose **Services and Ingresses**. Click the **Services** tab and select the namespace that the Service belongs to. For details about how to create a namespace, see :ref:`Creating a Namespace <ucs_01_0117__en-us_topic_0167389656_section31143617514>`.
 #. Click **Create Service** in the upper right corner and configure the parameters.
 
-   -  **Service Name**: Can be the same as the workload name.
+   -  **Service**: Enter a custom Service name, which can be the same as the workload name.
    -  **Service Type**: Select **LoadBalancer**.
    -  **Service Affinity**
 
-      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workloads associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
+      -  **Cluster-level**: The IP addresses and access ports of all nodes in a cluster can be used to access the workload associated with the Service. However, performance loss is introduced due to hops, and source IP addresses cannot be obtained.
       -  **Node-level**: Only the IP address and access port of the node where the workload is located can be used to access the workload associated with the Service. Service access will not cause performance loss due to route redirection, and the source IP address of the client can be obtained.
 
    -  **Namespace**: Set it to the namespace that the workload belongs to.

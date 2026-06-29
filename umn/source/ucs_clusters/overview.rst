@@ -5,7 +5,7 @@
 Overview
 ========
 
-UCS supports unified management of clusters across clouds and regions. The following types of clusters are supported:
+UCS supports the unified access and management of clusters across clouds and regions. The following types of clusters are supported:
 
--  **OTC clusters**: CCE standard and CCE Turbo clusters
--  **Attached clusters**: Third-party Kubernetes clusters that comply with Cloud Native Computing Foundation (CNCF) standards, such as AWS EKS clusters, Google Cloud GKE clusters, and self-managed Kubernetes clusters
+-  **T Cloud clusters**: CCE standard and CCE Turbo clusters
+-  **Attached clusters**: third-party Kubernetes clusters that comply with Cloud Native Computing Foundation (CNCF) standards, such as AWS EKS clusters, Google Cloud GKE clusters, and self-managed Kubernetes clusters

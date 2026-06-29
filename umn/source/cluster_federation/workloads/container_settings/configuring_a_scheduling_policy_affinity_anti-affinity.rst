@@ -10,7 +10,7 @@ Kubernetes supports affinity and anti-affinity scheduling at the node and pod le
 Configuring Scheduling Policies
 -------------------------------
 
-#. Log in to the UCS console and go to the **Federation** page.
+#. Log in to the UCS console and access the federation page.
 #. When creating a workload, click **Scheduling** in the **Advanced Settings** area.
 
    .. table:: **Table 1** Node affinity settings
@@ -30,7 +30,7 @@ Configuring Scheduling Policies
       +-----------------------------------+------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                |
       +===================================+============================================================================================================+
-      | Label Key                         | Node label. You can use the default label or customize a label.                                            |
+      | Label Key                         | Node label. You can use the default label or create a custom label.                                        |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------+
       | Operator                          | The following relations are supported: **In**, **NotIn**, **Exists**, **DoesNotExist**, **Gt**, and **Lt** |
       |                                   |                                                                                                            |
@@ -393,7 +393,7 @@ Workload Anti-Affinity (podAntiAffinity)
 
 Unlike the scenarios in which pods are preferred to be scheduled onto the same node, sometimes, it could be the exact opposite. For example, if certain pods are deployed together, they will affect the performance.
 
-The following example defines an inter-pod anti-affinity rule, which specifies that pods must not be scheduled to nodes that already have pods with the **app=frontend** label, that is, to deploy the pods of the frontend to different nodes with each node has only one replica.
+The following example defines an inter-pod anti-affinity rule, which specifies that pods must not be scheduled to nodes that already have pods with the **app=frontend** label. This means the pods of the frontend are deployed to different nodes. (Each node has only one pod.)
 
 .. code-block::
 
@@ -436,7 +436,7 @@ The following example defines an inter-pod anti-affinity rule, which specifies t
                    values:
                    - frontend
 
-Deploy the frontend and query the deployment results. You can find that each node has only one frontend pod and one pod of the Deployment is **Pending**. This is because when the scheduler is deploying the fifth pod, all nodes already have one pod with the **app=frontend** label on them. There is no available node. Therefore, the fifth pod will remain in the **Pending** status.
+Deploy the frontend and query the deployment results. You can find that each node has only one frontend pod and one pod of the Deployment is in the **Pending** state. This is because when the scheduler is deploying the fifth pod, all nodes already have one pod with the **app=frontend** label on them. There is no available node. Therefore, the fifth pod will remain in the **Pending** state.
 
 .. code-block::
 

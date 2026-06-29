@@ -9,7 +9,7 @@ Enabling Cluster Federation
 Enabling Cluster Federation
 ---------------------------
 
-You can enable cluster federation for a fleet with just a few clicks.
+You can enable cluster federation for a fleet with just one click.
 
 Enabling cluster federation involves two phases: enabling cluster federation and adding clusters to the federation. Enabling cluster federation for a fleet will federate the registered clusters in the fleet.
 
@@ -24,7 +24,7 @@ There is a quota limit for enabling cluster federation, and there are constraint
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+
    | Cluster status                    | All clusters in the fleet must be in the **Running** status.                                        |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+
-   | Cluster network                   | -  OTC cluster: An EIP must be associated with the cluster.                                         |
+   | Cluster network                   | -  T Cloud cluster: An EIP must be associated with the cluster.                                     |
    |                                   | -  Other types of clusters: Ensure that the clusters connect to UCS.                                |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+
    | Quota                             | The cluster federation quota is 1. This means cluster federation can be enabled only for one fleet. |
@@ -47,11 +47,11 @@ After cluster federation is enabled for a fleet, you can continue to add cluster
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
 
-#. In the card view of the target fleet, click **Add Cluster**, or click |image1| in the upper right corner.
+#. In the card of the target fleet, click **Add Cluster**, or click |image1| in the upper right corner.
 
    You can also click the fleet name to access the fleet console. In the navigation pane, choose **Container Clusters**. On the displayed page, click **Add Cluster** in the upper right corner.
 
-#. Select one or more existing clusters. A cluster can only be added to one fleet. The clusters displayed in the list are those that do not been added to any fleets.
+#. Select one or more existing clusters. A cluster can be added to only one fleet. The clusters displayed in the list are not added to any fleet.
 
 #. Click **OK**.
 
@@ -60,7 +60,7 @@ Managing Federation
 
 After cluster federation is enabled for a fleet, the **Federation** module on the fleet console is automatically unlocked.
 
-Next, you can create federated resources such as federated workloads, Services, and storage for deploying your service. You can also perform advanced operations such as multi-active DR and auto scaling for multi-cluster applications.
+Next, you can create federated resources, such as federated workloads, Services, and storage, to deploy your services. You can also perform advanced operations such as multi-active DR and auto scaling for multi-cluster applications.
 
 .. _ucs_01_0018__section88211316259:
 
@@ -70,7 +70,7 @@ Disabling Cluster Federation
 If you do not need to use cluster federation, you can disable it. After cluster federation is disabled, services running on the workloads are not affected.
 
 #. Log in to the UCS console. In the navigation pane, choose **Fleets**.
-#. On the **Fleets** tab, locate the target fleet and click **Disable Federation** in the upper right corner.
+#. On the **Fleets** tab, locate the target fleet and click **Disable Federation**.
 #. In the displayed dialog box, click **OK**.
 
 .. |image1| image:: /_static/images/en-us_image_0000001416896654.png

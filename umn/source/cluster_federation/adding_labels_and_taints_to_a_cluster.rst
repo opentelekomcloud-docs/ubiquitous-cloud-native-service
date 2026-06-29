@@ -29,7 +29,7 @@ Managing Cluster Labels and Taints
 ----------------------------------
 
 #. Log in to the UCS console.
-#. Click the name of the fleet where the target cluster is located. In the navigation pane, choose **Container Clusters**, locate the target cluster, and click |image1| in the upper right corner to go to the **Manage Labels and Taints** page.
+#. Click the name of the fleet where the target cluster is located. Choose **Container Clusters**, locate the target cluster, and click |image1| in the upper right corner to go to the **Manage Labels and Taints** dialog box.
 #. Click |image2| to add a node label or taint. You can add a maximum of 10 operations at a time.
 
    -  Choose **Add** or **Delete**.

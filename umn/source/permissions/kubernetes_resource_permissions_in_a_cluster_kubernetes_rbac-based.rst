@@ -50,7 +50,7 @@ You can regulate users' or user groups' access to Kubernetes resources based on 
 
 #. In the upper right corner, click **Add Permission**.
 
-#. In the window that slides from the right, confirm the cluster or fleet name, set **Namespace** (for example, select **All namespaces**), select the target user or user group, and set **Permission Type**.
+#. On the slide-out panel, confirm the cluster or fleet name, set **Namespace** (for example, select **All namespaces**), select the target user or user group, and set **Permission Type**.
 
    .. note::
 

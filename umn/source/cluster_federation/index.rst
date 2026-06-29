@@ -11,10 +11,11 @@ Cluster Federation
 -  :ref:`Workloads <ucs_01_0254>`
 -  :ref:`ConfigMaps and Secrets <ucs_01_0266>`
 -  :ref:`Services and Ingresses <ucs_01_0269>`
--  :ref:`DNS Policies <ucs_01_0275>`
+-  :ref:`MCI <ucs_01_0312>`
+-  :ref:`MCS <ucs_01_0374>`
 -  :ref:`Storage <ucs_01_0276>`
 -  :ref:`Namespaces <ucs_01_0281>`
--  :ref:`HPA Policies <ucs_01_0170>`
+-  :ref:`Multi-Cluster Workload Scaling <ucs_01_0338>`
 -  :ref:`Adding Labels and Taints to a Cluster <ucs_01_0318>`
 
 .. toctree::
@@ -27,8 +28,9 @@ Cluster Federation
    workloads/index
    configmaps_and_secrets/index
    services_and_ingresses/index
-   dns_policies
+   mci/index
+   mcs/index
    storage/index
    namespaces
-   hpa_policies
+   multi-cluster_workload_scaling/index
    adding_labels_and_taints_to_a_cluster
