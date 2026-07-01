@@ -6,8 +6,8 @@
       - helpcenter-base-jobs-no-check
     vars:
       sphinx_pdf_files:
-        - ucs-umn.pdf
         - ucs-api-ref.pdf
+        - ucs-umn.pdf
     check:
       jobs:
         - noop
